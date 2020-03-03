@@ -25,10 +25,108 @@ In this lab you will create a Node-RED application that uses HSL (Helsingin seud
 
 ## Create your first Node-RED app
 
+# Find the Node-RED Starter in the IBM Cloud catalog
+
 1. Log-in to IBM Cloud
 - https://cloud.ibm.com/login
 
 2. Click the _**Create Resource**_ button at the top right. This action will take you to the 'Catalog'.
+
+<img src="/images/create-resource.png" width="100%" height="100%">
+
+3. Search for node-red and go to the Software tab. 
+Then click on the node-red app box.
+
+<img src="/images/node-red-catalog.png" width="100%" height="100%">
+
+4. Click on the Create app button to continue.
+
+<img src="/images/create-app.png" width="100%" height="100%">
+
+# Configure your application
+
+5. Now you need to configure the Node-RED Starter application.
+
+On the App details page, a randomly generated name will be suggested – Node REDXXXX in the screenshot below. Either accept that default name or provide a unique name for your application. This will become part of the application URL. 
+Note: If the name is not unique, you will see an error message and you must enter a different name before you can continue.
+
+The Node-RED Starter application requires an instance of the Cloudant database service to store your application flow configuration. Select the region the service should be created in and what pricing plan it should use. 
+Note: You can only have one Cloudant instance using the Lite plan. If you have already got an instance, you will be able to select it from the Pricing plan select box. You can have more than one Node-RED Starter application using the same Cloudant service instance.
+
+Click the Create button to continue. This will create your application, but it is not yet deployed to IBM Cloud.
+
+# Enable the Continuous Delivery feature
+
+6. At this point, you have created the application and the resources it requires, but you have not deployed it anywhere to run. This step shows how to setup the Continuous Delivery feature that will deploy your application into the Cloud Foundry space of IBM Cloud.
+
+On the next screen, click the Deploy your app button to enable the Continuous Delivery feature for your application.
+
+You will need to create an IBM Cloud API key to allow the deployment process to access your resources. Click the New button to create the key. A message dialog will appear. Read what it says and then confirm and close the dialog.
+
+The Node-RED Starter kit only supports deployment to the Cloud Foundry space of IBM Cloud. Select the region to deploy your application to. This should match the region you created your Cloudant instance in.
+
+Select the region to create the DevOps toolchain.
+
+Click Create. This will take you back to the application details page.
+
+After a few moments, the Continuous Delivery section will refresh with the details of your newly created Toolchain. The Status field of the Delivery Pipeline will show In progress. That means your application is still being built and deployed.
+
+Click on the In progress link to see the full status of the Delivery Pipeline.
+
+The Deploy stage will take a few minutes to complete. You can click on the View logs and history link to check its progress. Eventually the Deploy stage will go green to show it has passed. This means your Node-RED Starter application is now running.
+
+# Open the Node-RED application
+
+Now that you’ve deployed your Node-RED application, let’s open it up!
+
+Open your IBM Cloud Resource list by selecting the sidebar menu and then selecting Resource List.
+
+You will see your newly created Node-RED Application listed under the Apps section (1). You will also see a corresponding entry under the Cloud Foundry apps section (2). Click on this Cloud Foundry app entry to go to your deployed application’s details page.
+
+From the details page, click the Visit App URL link to access your Node-RED Starter application.
+
+# Configure your Node-RED application
+
+The first time you open your Node-RED app, you’ll need to configure it and set up security.
+
+A new browser tab will open with the Node-RED start page.
+
+On the initial screen, click Next to continue.
+
+Secure your Node-RED editor by providing a username and password. If you need to change these at any point, you can either edit the values in the Cloudant database, or override them using environment variables. The documentation on nodered.org describes how to do this. Click Next to continue.
+
+The final screen summarizes the options you’ve made and highlights the environment variables you can use to change the options in the future. Click Finish to proceed.
+
+Node-RED will save your changes and then load the main application. From here you can click the Go to your Node-RED flow editor button to open the editor.
+
+The Node-RED editor opens showing the default flow.
+
+# Add extra nodes to your Node-RED palette
+
+Node-RED provides the palette manager feature that allows you to install additional nodes directly from the browser-based editor. This is convenient for trying nodes out, but it can cause issues due to the limited memory of the default Node-RED starter application.
+
+The recommended approach is to edit your application’s package.json file to include the additional node modules and then redeploy the application.
+
+This step shows how to do that in order to add the node-red-dashboard module.
+
+On your application’s details page, click the url in the Continuous Delivery box. This will take you to a git repository where you can edit the application source code from your browser.
+
+Scroll down the list of files and click on package.json. This file lists the module dependencies of your application.
+
+Click the Edit button
+
+Add the following entry to the top of the dependencies section (1):
+
+Note: Do not forget the comma (,) at the end of the line to separate it from the next entry.
+
+Add a Commit message (2) and click Commit changes (3)
+
+At this point, the Continuous Delivery pipeline will automatically run to build and deploy that change into your application. If you view the Delivery Pipeline you can watch its progress. The Build section shows you the last commit made (1) and the Deploy section shows the progress of redeploying the application (2).
+
+Once the Deploy stage completes, your application will have restarted and now have the node-red-dashboard nodes preinstalled.
+
+Congratulations! You have now created a Node-RED application that is hosted in the IBM Cloud. You have also learned how to edit the application source code and automatically deploy changes.
+
 
 ## Check HSL API
 ## Build your flow
