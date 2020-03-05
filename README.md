@@ -57,7 +57,7 @@ Once you have completed this lab you will never be late for the bus again! :smil
 On the App details page, a randomly generated name will be suggested – Node RED RANDOM_NAME. Either accept that default name or provide a unique name for your application. This will become part of the application URL. 
 Note: If the name is not unique, you will see an error message and you must enter a different name before you can continue.
 
-<img src="/images/name-app.png" width="100%" height="100%">
+<img src="/images/app-name.png" width="100%" height="100%">
 
 10. The Node-RED Starter application requires an instance of the Cloudant database service to store your application flow configuration. Select the region the service should be created in and what pricing plan it should use. 
 
