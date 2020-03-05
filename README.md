@@ -42,8 +42,7 @@ Once you have completed this lab you will never be late for the bus again! :smil
 
 <img src="/images/create-resource.png" width="100%" height="100%">
 
-7. Search for node-red and go to the Software tab. 
-Then click on the node-red app box.
+7. Search for node-red and go to the Software tab. Then click on the node-red app box.
 
 <img src="/images/node-red-catalog.png" width="100%" height="100%">
 
@@ -74,45 +73,69 @@ Note: You can only have one Cloudant instance using the Lite plan. If you have a
 
 On the next screen, click the Deploy your app button to enable the Continuous Delivery feature for your application.
 
-You will need to create an IBM Cloud API key to allow the deployment process to access your resources. Click the New button to create the key. A message dialog will appear. Read what it says and then confirm and close the dialog.
+<img src="/images/deploy-app.png" width="100%" height="100%">
+
+13. You will need to create an IBM Cloud API key to allow the deployment process to access your resources. Click the **New** button to create the key. A message dialog will appear. Read what it says and then confirm and close the dialog.
 
 The Node-RED Starter kit only supports deployment to the Cloud Foundry space of IBM Cloud. Select the region to deploy your application to. This should match the region you created your Cloudant instance in.
 
-Select the region to create the DevOps toolchain.
+<img src="/images/configure-app.png" width="100%" height="100%">
 
-Click Create. This will take you back to the application details page.
+Select the region to create the DevOps toolchain. Click Create. This will take you back to the application details page.
+
+<img src="/images/configure-app2.png" width="100%" height="100%">
 
 After a few moments, the Continuous Delivery section will refresh with the details of your newly created Toolchain. The Status field of the Delivery Pipeline will show In progress. That means your application is still being built and deployed.
 
-Click on the In progress link to see the full status of the Delivery Pipeline.
+<img src="/images/deploy-inprogress.png" width="100%" height="100%">
 
-The Deploy stage will take a few minutes to complete. You can click on the View logs and history link to check its progress. Eventually the Deploy stage will go green to show it has passed. This means your Node-RED Starter application is now running.
+14. Click on the In progress link to see the full status of the Delivery Pipeline.
 
-### Open the Node-RED application
+The Deploy stage will take a few minutes to complete. You can click on the View logs and history link to check its progress. 
+
+<img src="/images/stage-running.png" width="100%" height="100%">
+
+Eventually the Deploy stage will go green to show it has passed. This means your Node-RED Starter application is now running.
+
+<img src="/images/stage-passed.png" width="100%" height="100%">
+
+### Open and configure the Node-RED application
 
 Now that you’ve deployed your Node-RED application, let’s open it up!
 
-Open your IBM Cloud Resource list by selecting the sidebar menu and then selecting Resource List.
+15. Click on the **View console** top open the application details page.
 
-You will see your newly created Node-RED Application listed under the Apps section (1). You will also see a corresponding entry under the Cloud Foundry apps section (2). Click on this Cloud Foundry app entry to go to your deployed application’s details page.
+<img src="/images/stage-passed.png" width="100%" height="100%">
 
-From the details page, click the Visit App URL link to access your Node-RED Starter application.
+16. From the details page, click the Visit App URL link to access your Node-RED Starter application.
 
-### Configure your Node-RED application
+<img src="/images/visit-app.png" width="100%" height="100%">
 
-The first time you open your Node-RED app, you’ll need to configure it and set up security.
+17. The first time you open your Node-RED app, you’ll need to configure it and set up security. A new browser tab will open with the Node-RED start page. On the initial screen, click Next to continue.
 
-A new browser tab will open with the Node-RED start page.
+<img src="/images/configure-nodered.png" width="100%" height="100%">
 
-On the initial screen, click Next to continue.
+Secure your Node-RED editor by providing a username and password. Click Next to continue.
 
-Secure your Node-RED editor by providing a username and password. If you need to change these at any point, you can either edit the values in the Cloudant database, or override them using environment variables. The documentation on nodered.org describes how to do this. Click Next to continue.
+<img src="/images/configure-nodered2.png" width="100%" height="100%">
 
-The final screen summarizes the options you’ve made and highlights the environment variables you can use to change the options in the future. Click Finish to proceed.
+Note: If you need to change your username/password at any point, you can either edit the values in the Cloudant database, or override them using environment variables.(LINK)
+
+18. The final screen summarizes the options you’ve made and highlights the environment variables you can use to change the options in the future. Click Finish to proceed.
+
+<img src="/images/configure-nodered3.png" width="100%" height="100%">
+
+<img src="/images/configure-nodered4.png" width="100%" height="100%">
 
 Node-RED will save your changes and then load the main application. From here you can click the Go to your Node-RED flow editor button to open the editor.
 
-The Node-RED editor opens showing the default flow.
+<img src="/images/start-nodered.png" width="100%" height="100%">
+
+You will need to login with the credentials you entered in the previous step and then the Node-RED editor opens showing the default flow.
+
+<img src="/images/login-nodered.png" width="100%" height="100%">
+
+<img src="/images/flow-nodered.png" width="100%" height="100%">
 
 ### Add extra nodes to your Node-RED palette
 
