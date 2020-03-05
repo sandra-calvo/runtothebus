@@ -1,6 +1,7 @@
 # Run to the bus 
 
-In this lab you will create a Node-RED application that uses HSL (Helsingin seudun liikenne)
+In this lab you will create a Node-RED application that uses HSL (Helsingin seudun liikenne) API. The outcome is a visual representation of the bus line you select in the map of Helsinki. 
+Once you have completed this lab you will never be late for the bus again! :smile:
 
   - [Need to know](#need-to-know)
   - [Create an IBM Cloud account](#create-an-ibm-cloud-account)
@@ -22,42 +23,54 @@ In this lab you will create a Node-RED application that uses HSL (Helsingin seud
 
 ## Create an IBM Cloud account
 
+1. Go to https://cloud.ibm.com/registration and click Create an IBM Cloud account.
+
+2. Enter your IBMid email address. If you don't have an existing IBMid, an ID is created based on the email that you enter.
+
+3. Complete the remaining fields with your information, and click Create account.
+
+4. Confirm your account by clicking the link in the confirmation email that's sent to your provided email address.
 
 ## Create your first Node-RED app
 
-# Find the Node-RED Starter in the IBM Cloud catalog
+### Find the Node-RED Starter in the IBM Cloud catalog
 
-1. Log-in to IBM Cloud
+5. Log-in to IBM Cloud.
 - https://cloud.ibm.com/login
 
-2. Click the _**Create Resource**_ button at the top right. This action will take you to the 'Catalog'.
+6. Click the _**Create Resource**_ button at the top right. This action will take you to the 'Catalog'.
 
 <img src="/images/create-resource.png" width="100%" height="100%">
 
-3. Search for node-red and go to the Software tab. 
+7. Search for node-red and go to the Software tab. 
 Then click on the node-red app box.
 
 <img src="/images/node-red-catalog.png" width="100%" height="100%">
 
-4. Click on the Create app button to continue.
+8. Click on the Create app button to continue.
 
 <img src="/images/create-app.png" width="100%" height="100%">
 
-# Configure your application
+### Configure your application
 
-5. Now you need to configure the Node-RED Starter application.
+9. Now you need to configure the Node-RED Starter application.
 
-On the App details page, a randomly generated name will be suggested – Node REDXXXX in the screenshot below. Either accept that default name or provide a unique name for your application. This will become part of the application URL. 
+On the App details page, a randomly generated name will be suggested – Node RED RANDOM_NAME. Either accept that default name or provide a unique name for your application. This will become part of the application URL. 
 Note: If the name is not unique, you will see an error message and you must enter a different name before you can continue.
 
-The Node-RED Starter application requires an instance of the Cloudant database service to store your application flow configuration. Select the region the service should be created in and what pricing plan it should use. 
+<img src="/images/name-app.png" width="100%" height="100%">
+
+10. The Node-RED Starter application requires an instance of the Cloudant database service to store your application flow configuration. Select the region the service should be created in and what pricing plan it should use. 
+
+<img src="/images/db-app.png" width="100%" height="100%">
+
 Note: You can only have one Cloudant instance using the Lite plan. If you have already got an instance, you will be able to select it from the Pricing plan select box. You can have more than one Node-RED Starter application using the same Cloudant service instance.
 
-Click the Create button to continue. This will create your application, but it is not yet deployed to IBM Cloud.
+11. Click the **Create** button to continue. This will create your application, but it is not yet deployed to IBM Cloud.
 
-# Enable the Continuous Delivery feature
+### Enable the Continuous Delivery feature
 
-6. At this point, you have created the application and the resources it requires, but you have not deployed it anywhere to run. This step shows how to setup the Continuous Delivery feature that will deploy your application into the Cloud Foundry space of IBM Cloud.
+12. At this point, you have created the application and the resources it requires, but you have not deployed it anywhere to run. This step shows how to setup the Continuous Delivery feature that will deploy your application into the Cloud Foundry space of IBM Cloud.
 
 On the next screen, click the Deploy your app button to enable the Continuous Delivery feature for your application.
 
@@ -75,7 +88,7 @@ Click on the In progress link to see the full status of the Delivery Pipeline.
 
 The Deploy stage will take a few minutes to complete. You can click on the View logs and history link to check its progress. Eventually the Deploy stage will go green to show it has passed. This means your Node-RED Starter application is now running.
 
-# Open the Node-RED application
+### Open the Node-RED application
 
 Now that you’ve deployed your Node-RED application, let’s open it up!
 
@@ -85,7 +98,7 @@ You will see your newly created Node-RED Application listed under the Apps secti
 
 From the details page, click the Visit App URL link to access your Node-RED Starter application.
 
-# Configure your Node-RED application
+### Configure your Node-RED application
 
 The first time you open your Node-RED app, you’ll need to configure it and set up security.
 
@@ -101,7 +114,7 @@ Node-RED will save your changes and then load the main application. From here yo
 
 The Node-RED editor opens showing the default flow.
 
-# Add extra nodes to your Node-RED palette
+### Add extra nodes to your Node-RED palette
 
 Node-RED provides the palette manager feature that allows you to install additional nodes directly from the browser-based editor. This is convenient for trying nodes out, but it can cause issues due to the limited memory of the default Node-RED starter application.
 
